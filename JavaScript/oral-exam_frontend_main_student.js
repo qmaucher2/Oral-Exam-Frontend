@@ -1,18 +1,14 @@
-//document.querySelector('#start').addEventlistener('click', aufnahmestarten());
+document.querySelector('#start').addEventlistener('click', aufnahmestarten());
 
-//function aufnahmestarten ()
-//{
-//navigator.mediadevices.getusermedia({
-  //  video: true,
-   // audio: true
+function aufnahmestarten () {
+        console.log("Test started");
+        let userallows = { audio: true, video:true}
+navigator.mediadevices.getusermedia(userallows).then(function(stream){
+    
 
-//}
-//)
-//}
 
-document.querySelector('#start').addEventListener('click', async (e) => {
-  const stream = await navigator.mediaDevices.getUserMedia({
-    video: true
-  })
-  document.querySelector('video').srcObject = stream
-})
+
+
+}
+)
+}
