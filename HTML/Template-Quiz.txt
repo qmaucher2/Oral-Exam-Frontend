@@ -1,0 +1,9 @@
+This is a template Quiz.
+Over the course of the next couple of minutes, you will hear a couple of different quizzes. Please answer slowly and clearly.
+Once you are ready to take the test, answer: "Start quiz"
+
+1. What is 1 + 1?
+
+2. Please spell: "Word"?
+
+3. What is the capital of France?
