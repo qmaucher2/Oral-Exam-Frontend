@@ -4,14 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Quiz</title>
+    <script src="oral-exam_frontend_create-quiz.js"></script>
 </head>
 <body>
     <form>
-        <button id="add-question">ADD QUESTION</button><br>
-        <div>
+        <div id="questionslist">
             <label>Quesiton 1.</label>
-            <input type="text" class="question-field"><br>
+            <textarea class="question-field" placeholder="Enter Question 1 here."></textarea>
+            <br></br>
         </div>
+        <button id="addquestion" type="button" onclick="addFrage()">ADD QUESTION</button><br>
+        <button id="savequiz" type="submit">SAVE QUIZ</button>
     </form>
 </body>
 </html>
