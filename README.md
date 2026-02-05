@@ -5,6 +5,7 @@
 </ul>
 
 <h3>Functionality<h3>
+
 <ol>
     <li>Open website</li>
     <li>Choose the "Sign-in as Teacher" button</li>
