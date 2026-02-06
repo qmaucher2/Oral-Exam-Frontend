@@ -31,7 +31,7 @@
         </tr>
         <tr>
             <td>Create/Open Classrooms</td>
-            <td>View/Open Classrooms<td>
+            <td>View/Open Classrooms</td>
         </tr>
         <tr>
             <td>Create/Assign Quizzes</td>
