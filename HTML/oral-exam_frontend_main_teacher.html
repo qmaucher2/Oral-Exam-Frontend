@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oral-exam_frontend_main</title>
     <link rel="stylesheet" href="oral-exam_frontend_main">
+    <script src="oral-exam_frontend_add-classroom.js"></script>
 </head>
 <body>
     <h1>{Project Name}</h1>
@@ -13,9 +14,12 @@
             <div>
                 <h3>Your Classrooms</h3>
                 <ul>
-                    <li><a href="Template-Classroom_teacher-pov.html">Example Classroom</a></li>
+                    <div id="created-classrooms">
+                        <li><a href="Template-Classroom_teacher-pov.html">Example Classroom</a></li>
+                    </br>
+                    </div>
                 </ul>       
-                <button id="add-classroom-button">ADD CLASSROOM</button>    
+                <button id="add-classroom-button" type="button" onclick="addClassroom()">ADD CLASSROOM</button>    
             </div>
         </fieldset>
     </nav>

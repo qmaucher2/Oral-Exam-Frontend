@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded" ,() => { //waits until
+document.addEventListener("DOMContentLoaded" ,() => {
 
 document.querySelector('#start-button').addEventlistener('click', aufnahmestarten());
 document.querySelector('#stop-button').addEventlistener('click', aufnahmestoppen());
