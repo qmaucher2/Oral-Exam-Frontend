@@ -27,6 +27,13 @@ async function aufnahmestarten () {
 
 async function aufnahmestoppen() {
         mediarecorder.stop()
+};
+
+async function bildschirmaufnahme(){
+        return await navigator.mediaDevices.getDisplayMedia({
+                audio: false,
+                video: { mediaSource: "screen"}
+        });
         
 }
 }
