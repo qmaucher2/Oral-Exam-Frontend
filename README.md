@@ -14,7 +14,7 @@
     <li>Setup Server to host website</li>
     <li>Assign usernames for log-in</li>
 </ol>
-<br></br>
+<br><br>
 <fieldset>
     <h2>Functionality</h2>
     <br>
