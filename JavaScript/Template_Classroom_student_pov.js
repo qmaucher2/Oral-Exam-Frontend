@@ -4,12 +4,17 @@ document.querySelector('#start-button').addEventlistener('click', aufnahmestarte
 document.querySelector('#stop-button').addEventlistener('click', aufnahmestoppen());
 
 async function aufnahmestarten () {
+        let video;
+        let audio;
         const stream = await navigator.mediaDevices.getUserMedia(
-                audio = true,
-                video = true
-        )};
-        
-        preview.srcObject = stream;
+            audio = true,
+            video = true
+        )}
+        let preview;
+        let mediaRecorder;
+        let chunks;
+            let stream;
+            preview.srcObject = stream;
         mediaRecorder = new MediaRecorder(stream);
         chunks = [];
 
@@ -26,6 +31,7 @@ async function aufnahmestarten () {
         }
 
 async function aufnahmestoppen() {
+        let mediarecorder;
         mediarecorder.stop()
 };
 

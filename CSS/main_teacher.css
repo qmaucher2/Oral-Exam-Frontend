@@ -2,3 +2,13 @@
     justify-content:flex-end;
 }
 
+#created-classrooms button {
+    border: thin solid black;
+    color: gray;
+    opacity: 50%;
+}
+
+#created-classrooms button:hover {
+    opacity: 1;
+}
+
