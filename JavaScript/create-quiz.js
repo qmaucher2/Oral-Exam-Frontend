@@ -1,6 +1,6 @@
 let placeholder = 2;
 
-function addFrage() {
+function addquestion() {
     const insertfield = document.getElementById("questionslist")
     const newFrage = document.createElement("div");
     newFrage.innerHTML = `
