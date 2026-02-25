@@ -1,40 +1,41 @@
-document.addEventListener("DOMContentLoaded" ,() => {
+document.addEventListener("DOMContentLoaded", () => {
 
-document.querySelector('#start-button').addEventlistener('click', aufnahmestarten());
-document.querySelector('#stop-button').addEventlistener('click', aufnahmestoppen());
+        document.querySelector('#start-button').addEventListener('click', startRecording);
+        document.querySelector('#stop-button').addEventListener('click', stopRecording);
 
-async function aufnahmestarten () {
-        const stream = await navigator.mediaDevices.getUserMedia(
-                audio = true,
-                video = true
-        )};
-        
+        async function startRecording() {
+            const stream = await navigator.mediaDevices.getUserMedia(
+                audio,
+                video
+            )
+        };
+
         preview.srcObject = stream;
-        mediaRecorder = new MediaRecorder(stream);
-        chunks = [];
+        let mediaRecorder = new MediaRecorder(stream);
+        let chunks = [];
 
         mediaRecorder.onstop = () => {
-                const videoBlob = new Blob(chunks, { type: "video/webm"});
-                const videoUrl = URL.createObjectURL(videoBlob);
+            const videoBlob = new Blob(chunks, {type: "video/webm"});
+            const videoUrl = URL.createObjectURL(videoBlob);
 
-                const a = document.createElement("a");
-                a.href = videoUrl;
-                document.body.appendChild(a);
-                a.click();
-                
-                mediaRecorder.start()
+            const a = document.createElement("a");
+            a.href = videoUrl;
+            document.body.appendChild(a);
+            a.click();
+
+            mediaRecorder.start()
         }
 
-async function aufnahmestoppen() {
-        mediarecorder.stop()
-};
+        async function stopRecording() {
+            mediarecorder.stop()
+        };
 
-async function bildschirmaufnahme(){
-        return await navigator.mediaDevices.getDisplayMedia({
+        async function startScreenRecording() {
+            return await navigator.mediaDevices.getDisplayMedia({
                 audio: false,
-                video: { mediaSource: "screen"}
-        });
-        
-}
-}
+                video: {mediaSource: "screen"}
+            });
+
+        }
+    }
 )

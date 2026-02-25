@@ -1,4 +1,5 @@
 let placeholder = 2;
+
 function addFrage() {
     const insertfield = document.getElementById("questionslist")
     const newFrage = document.createElement("div");
@@ -8,5 +9,5 @@ function addFrage() {
         <br></br>
         `;
     insertfield.appendChild(newFrage);
-    placeholder ++;
+    placeholder++;
 }
