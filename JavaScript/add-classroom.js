@@ -1,4 +1,5 @@
 let placeholder = 2
+
 function addClassroom() {
     const insertfield = document.getElementById("created-classrooms")
     const newClassroom = document.createElement("div");
@@ -7,5 +8,5 @@ function addClassroom() {
         <br>
         `;
     insertfield.appendChild(newClassroom);
-    placeholder ++;
+    placeholder++;
 }

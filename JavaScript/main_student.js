@@ -1,14 +1,11 @@
-document.querySelector('#start').addEventlistener('click', aufnahmestarten());
+document.querySelector('#start').addEventListener('click', startRecording);
 
-function aufnahmestarten () {
-        console.log("Test started");
-        let userallows = { audio: true, video:true}
-navigator.mediadevices.getusermedia(userallows).then(function(stream){
-    
-
+function startRecording() {
+    console.log("Test started");
+    let userAllows = {audio: true, video: true}
+    navigator.mediaDevices.getUserMedia(userAllows).then(function (stream) {
 
 
-
-}
-)
+        }
+    )
 }
