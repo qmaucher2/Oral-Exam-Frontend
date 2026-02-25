@@ -1,14 +1,40 @@
+/*header */
+#signout{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    align-items: center;
+}
+
+.signout-border {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+
+/*nav */
 #created-classrooms {
-    justify-content:flex-end;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    list-style-type: none;
+
 }
 
 #created-classrooms button {
     border: thin solid black;
     color: gray;
-    opacity: 50%;
+    opacity: 45%;
 }
 
 #created-classrooms button:hover {
     opacity: 1;
 }
 
+#Template_Classroom {
+    margin-bottom: 1.5%;
+}
+
+/* */

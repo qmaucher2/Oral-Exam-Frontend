@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>main</title>
-    <link rel="stylesheet" href="main.html">
+    <link rel="stylesheet" href="../CSS/main_teacher.css">
     <script src="../JavaScript/add-classroom.js"></script>
 </head>
 <body>
-    <h1>{Project Name}</h1>
+    <header>
+        <h1>{Project Name}</h1>
+        <div id="signout">
+            <fieldset class="signout-border">
+                <!--<img src="icon.png" alt="icon">-->
+            </fieldset>
+            <a href="sign-in.html">Sign-Out</a>
+        </div>
+    </header>
     <nav>
         <fieldset>
             <div>
                 <h3>Your Classrooms</h3>
-                <ul>
-                    <li id="created-classrooms"><a href="Template_Classroom_teacher_pov.html">Example Classroom</a></li>
+                <ul id="created-classrooms">
+                    <li id="Template_Classroom"><a href="Template_Classroom_teacher_pov.html">Example Classroom</a></li>
                 </ul>
                 <button id="add-classroom-button" type="button" onclick="addClassroom()">ADD CLASSROOM</button>    
             </div>
         </fieldset>
     </nav>
+    <main>
+    </main>
 </body>
 </html>
