@@ -6,7 +6,7 @@ function addFrage() {
     newFrage.innerHTML = `
         <label>Question ${placeholder}.</label>
         <textarea class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
-        <br></br>
+        <br>
         `;
     insertfield.appendChild(newFrage);
     placeholder++;
