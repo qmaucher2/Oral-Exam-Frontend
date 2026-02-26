@@ -1,8 +1,20 @@
+html{
+    background: #FAF9F6;
+}
+
 /*header */
+
+header {
+    display: flex;
+    flex-direction: row;
+    border: thin solid red;
+    justify-content: space-between;
+}
+
 #signout{
     display: flex;
     justify-content: flex-end;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
 }
 
@@ -33,8 +45,11 @@
     opacity: 1;
 }
 
-#Template_Classroom {
+/*#Template_Classroom {
     margin-bottom: 1.5%;
 }
+*/
 
-/* */
+.classroom-bullet-point{
+    margin: 1.5%;
+}

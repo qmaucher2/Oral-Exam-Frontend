@@ -4,20 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Create Quiz</title>
+    <link rel="stylesheet" href="../CSS/create-quiz.css">
     <script src="../JavaScript/create-quiz.js"></script>
 </head>
 <body>
-    <form>
-        <div id="questionslist">
-            <label>Quesiton 1.</label>
+    <header>
+        <h1>Create Quiz</h1>
+        <div id="signout">
+            <div id="signout-button">
+                <fieldset class="signout-border">
+                    <!--<img src="icon.png" alt="icon">-->
+                </fieldset>
+                <a href="sign-in.html">Sign-Out</a>
+            </div>
+        </div>
+    </header>
+    <nav>
+    </nav>
+    <main>
+        <form>
+            <div id="questionslist">
+                <label>Quesiton 1.</label>
                 <label>
                     <textarea class="question-field" placeholder="Enter Question 1 here."></textarea>
                 </label>
-            <br>
-        </div>
-        <!--<button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>-->
-        <button id="addquestion_button" type="button" onclick="addquestion()">ADD QUESTION</button><br>
-        <button id="savequiz" type="button" onclick="submitquiz; location.href='Template_Classroom_teacher_pov.html'">SAVE QUIZ</button>
-    </form>
+                <br>
+            </div>
+            <!--<button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>-->
+            <button id="addquestion_button" type="button" onclick="addquestion()">ADD QUESTION</button><br>
+            <button id="savequiz" type="button" onclick="submitquiz; location.href='Template_Classroom_teacher_pov.html'">SAVE QUIZ</button>
+        </form>
+    </main>
 </body>
 </html>
