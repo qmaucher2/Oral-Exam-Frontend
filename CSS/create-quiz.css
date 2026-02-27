@@ -1,0 +1,31 @@
+html {
+   background: #FAF9F6;
+}
+
+/*header*/
+header {
+    display: flex;
+    flex-direction: row;
+    border: thin solid red;
+    justify-content: space-between;
+}
+
+#signout{
+    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+    border: thin solid red;
+}
+
+.signout-border {
+    border: 1px solid black;
+    border-radius: 50%;
+    height: 30px;
+    width: 30px;
+}
+
+/*main*/
+.quiz-container {
+    margin: 2%;
+}
