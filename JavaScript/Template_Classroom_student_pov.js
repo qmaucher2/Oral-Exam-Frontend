@@ -39,3 +39,20 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 )
+
+
+
+const formData = new FormData();
+formData.append("class_name", "History 101");
+// ... append your file ...
+
+fetch('https://your-api-url.com/analyze-exam', {
+    method: 'POST',
+    headers: {
+        // This is where you pass the key!
+        "API_KEY": "process.env.API_KEY"
+    },
+    body: formData
+})
+    .then(response => response.json())
+    .then(data => console.log(data));
