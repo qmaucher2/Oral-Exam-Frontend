@@ -1,41 +1,84 @@
 let Recording_status = false;
+let mediaRecorder;
+let audioChunks = [];
 
-function prime_startRecording(){
+async function prime_startRecording(){
+    const buttonbox = document.getElementById("start_button");
     console.log("Anticheat started ;)");
     Recording_status = !Recording_status;
     if (Recording_status) {
-        start_button.innerHTML= `
-        stop-button
-        `
-        startAnticheat();
-        startRecording()
+        buttonbox.textContent= "stop-button";
+        await startAnticheat();
+        startRecording().then();
     }
-    else{
-        start_button.innerHTML = `
-        start-button
-        `
+    else {
+        buttonbox.textContent = "start-button"
         stopRecording()
     }
 }
 
 async function startAnticheat(){
-    let stream = await navigator.mediaDevices.getUserMedia({video: {mediaSource: "screen"}, audio: true})
-
+        try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        console.log("Anticheat permissions granted");
+    } catch (err) {
+        console.error("Please Accept the Permissions:", err);
+    }
 }
-
 
 async function startRecording(){
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = []; // Reset chunks for new recording
 
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                audioChunks.push(event.data);
+            }
+        };
+
+        mediaRecorder.start();
+        console.log("Recording started");
+    } catch (error) {
+        console.error("Microphone Access failed/denied:", error);
+        alert("Please Accept the Microphone permissions");
+    }
 }
-
 
 function stopRecording(){
+    if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+        console.log("Recording stopped");
 
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            console.log("Recording available at:", audioUrl);
+        };
+    }
 }
+
+
+/*
+async function startScreenRecording() {
+    return await navigator.mediaDevices.getDisplayMedia({ audio: false, video: { mediaSource: "screen" } });
+}
+ */
 
 /*
 function stopRecording() {
     console.log("Test stopped");
+        if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+        console.log("Recording stopped");
+
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            console.log("Recording available at:", audioUrl);
+        };
+    }
 }
  */
 /*
@@ -49,3 +92,72 @@ function startRecording() {
     )
 }
  */
+
+
+/*let recordingStatus = false;
+let mediaRecorder;
+let audioChunks = [];
+
+async function prime_startRecording() {
+    const buttonbox = document.getElementById("start_button");
+    console.log("Anticheat started;");
+
+    recordingStatus = !recordingStatus;
+
+    if (recordingStatus) {
+        buttonbox.textContent = "Stop Recording"; // Use textContent for plain text
+        await startAnticheat();
+        startRecording();
+    } else {
+        buttonbox.textContent = "Start Recording";
+        stopRecording();
+    }
+}
+
+async function startAnticheat() {
+    // Note: 'mediaSource: screen' is non-standard; use getDisplayMedia for screens
+    try {
+        await navigator.mediaDevices.getUserMedia({ audio: true });
+        console.log("Anticheat permissions granted");
+    } catch (err) {
+        console.error("Anticheat error:", err);
+    }
+}
+
+async function startRecording() {
+    try {
+        const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+        mediaRecorder = new MediaRecorder(stream);
+        audioChunks = []; // Reset chunks for new recording
+
+        mediaRecorder.ondataavailable = (event) => {
+            if (event.data.size > 0) {
+                audioChunks.push(event.data);
+            }
+        };
+
+        mediaRecorder.start();
+        console.log("Recording started");
+    } catch (err) {
+        console.error("Error accessing microphone:", err);
+        alert("Could not start recording. Check microphone permissions.");
+    }
+}
+
+function stopRecording() {
+    if (mediaRecorder && mediaRecorder.state !== "inactive") {
+        mediaRecorder.stop();
+        console.log("Recording stopped");
+
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            console.log("Recording available at:", audioUrl);
+        };
+    }
+}
+async function startScreenRecording() {
+    return await navigator.mediaDevices.getDisplayMedia({ audio: false, video: { mediaSource: "screen" } });
+}
+
+*/

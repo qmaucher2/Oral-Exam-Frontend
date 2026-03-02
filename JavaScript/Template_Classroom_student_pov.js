@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
 )
 
 
-
 const formData = new FormData();
 formData.append("class_name", "History 101");
 // ... append your file ...
