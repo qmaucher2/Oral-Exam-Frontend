@@ -7,12 +7,12 @@ async function prime_startRecording(){
     console.log("Anticheat started ;)");
     Recording_status = !Recording_status;
     if (Recording_status) {
-        buttonbox.textContent= "stop-button";
+        buttonbox.textContent= " 🛑stop-button";
         await startAnticheat();
         startRecording().then();
     }
     else {
-        buttonbox.textContent = "start-button"
+        buttonbox.textContent = "🎤start-button"
         stopRecording()
     }
 }
@@ -46,6 +46,7 @@ async function startRecording(){
     }
 }
 
+/*
 function stopRecording(){
     if (mediaRecorder && mediaRecorder.state !== "inactive") {
         mediaRecorder.stop();
@@ -55,6 +56,36 @@ function stopRecording(){
             const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
             const audioUrl = URL.createObjectURL(audioBlob);
             console.log("Recording available at:", audioUrl);
+        };
+    }
+}
+ */
+function stopRecording() {
+    // Check state using the correct string value 'inactive' as per MDN docs
+    if (mediaRecorder && mediaRecorder.state !== 'inactive') {
+        mediaRecorder.stop();
+        console.log('Recording stopped');
+
+        mediaRecorder.onstop = () => {
+            const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+            const audioUrl = URL.createObjectURL(audioBlob);
+            console.log('Recording available at:', audioUrl);
+
+
+            const downloadLink = document.createElement('a');
+            document.body.appendChild(downloadLink);
+
+            // Set link attributes
+            downloadLink.style.display = 'none';
+            downloadLink.href = audioUrl;
+            downloadLink.download = 'audio_recording.webm';
+
+            downloadLink.click();
+            document.body.removeChild(downloadLink);
+
+            URL.revokeObjectURL(audioUrl);
+
+            audioChunks = [];
         };
     }
 }

@@ -7,5 +7,6 @@ function addClassroom() {
         <li class="classroom-bullet-point"><a href="Template-Classroom${placeholder}_teacher-pov.html">Template Classroom-${placeholder}</a></li>
         `;
     insertfield.appendChild(newClassroom);
+    console.log(newClassroom);
     placeholder++;
 }
