@@ -1,6 +1,9 @@
 let placeholder = 2;
-let questions = document.getElementsByClassName("question-field");
-let notes = document.getElementsByClassName("note-field");
+
+let questions = document.querySelectorAll(".question-field");
+let notes = document.querySelectorAll(".note-field");
+let json_voice = {}
+let json_quiz = {}
 
 function addquestion() {
     const insertfield = document.getElementById("questionslist")
@@ -20,18 +23,22 @@ function addquestion() {
 function submitquiz(){
     createjson_voice()
     createjson_quiz()
+    console.log("Quiz-form submitted")
 }
 
+
+
 function createjson_voice(){
-    let json_voice = {
-        "questions-set:":"questions.value"
-    }
-    alert(json_voice);
+    const voice_array = [...questions].map(x => x.value)
+    json_voice["questions"] = voice_array;
+    alert(voice_array);
 }
 
 function createjson_quiz(){
-    let json_quiz = {
-        "questions-set":":questions.value",
-        "notes-set":":notes.value",
-    }
+    const question_array = [...questions].map(x => x.value);
+    const notes_array = [...notes].map(x => x.value);
+    json_quiz["questions"] = question_array;
+    json_quiz["notes"] = notes_array;
+    console.log("quiz form created");
+    alert(json_quiz)
 }
