@@ -46,6 +46,12 @@ async function startRecording(){
     }
 }
 
+
+
+function uploadAssignment_Supplemental(){
+    alert("Add function in js");
+}
+
 /*
 function stopRecording(){
     if (mediaRecorder && mediaRecorder.state !== "inactive") {
@@ -192,3 +198,6 @@ async function startScreenRecording() {
 }
 
 */
+
+
+
