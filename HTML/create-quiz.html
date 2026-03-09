@@ -25,12 +25,14 @@
         <form>
             <div id="questionslist">
                 <label>Quesiton 1.
-                    <textarea class="question-field" placeholder="Enter Question 1 here."></textarea>
+                    <textarea id="question" class="question-field" placeholder="Enter Question 1 here."></textarea>
                     <textarea class="notes-field" placeholder="Enter Notes to AI about Question 1 here."></textarea>
                 </label>
                 <br>
             </div>
-            <!--<button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>-->
+            <div id="ai-input">
+                <button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>
+            </div>
             <button id="addquestion_button" type="button" onclick="addquestion()">ADD QUESTION</button><br>
             <button id="savequiz" type="button" onclick="submitquiz(); location.href='Template_Classroom_teacher_pov.html'">SAVE QUIZ</button>
         </form>
