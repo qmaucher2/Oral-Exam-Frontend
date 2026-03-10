@@ -18,6 +18,7 @@ function addquestion() {
 function submitquiz(){
     createjson_quiz();
     send_json();
+    alert("asdf");
     console.log("Quiz-form submitted")
 }
 
@@ -37,16 +38,39 @@ function createjson_quiz(){
     let json_voice = {
         elements: [question_array, notes_array]
     }
-
-    console.log("json_quiz:", json_quiz);
-    console.log("json_voice:", json_voice);
     console.log(JSON.stringify(json_quiz));
     console.log(JSON.stringify(json_voice));
+
+    const json_quiz_string = JSON.stringify(json_quiz);
+    const subject = document.getElementById("uservalue_subject").value;
+    const formData = new FormData();
+    formData.append("class_name", subject);
+// ... append your file ...
+    formData.append("json_quiz_string", json_quiz_string);
+
+    fetch('https://your-api-url.com/analyze-exam', {
+        method: 'POST',
+        headers: {
+            // This is where you pass the key!
+            "API_KEY": "process.env.API_KEY"
+        },
+        body: formData
+    })
+        .then(response => response.json())
+        .then(data => console.log(data));
+
 }
 
 function send_json(){
 
 }
+
+
+
+
+
+
+
 
 
 function generatequiz(){
@@ -68,19 +92,17 @@ function generatequiz(){
          token = 0;
      }
 
-
     const insertfield = document.getElementById("questionslist")
     const newFrage = document.createElement("div");
     newFrage.innerHTML = `
-        <label>Question ${placeholder}.
-        <textarea class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
-        <textarea class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
+        <label>
+            <a> Question ${placeholder}.</a>
+            <br>
+            <textarea rows="5" cols="25" class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
+            <textarea rows="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
         </label>
         `;
 
     insertfield.appendChild(newFrage);
-
-
-
 
 }

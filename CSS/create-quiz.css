@@ -25,7 +25,24 @@ header {
     width: 30px;
 }
 
+
+/*nav*/
+
 /*main*/
 .quiz-container {
     margin: 2%;
+}
+
+#uservalue_subject {
+    display: flex;
+    width: 180px;
+}
+
+
+#div-for-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1%;
+    border: thin solid red;
 }

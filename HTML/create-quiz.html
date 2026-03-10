@@ -23,18 +23,25 @@
     </nav>
     <main>
         <form>
+            <label>
+                <input id="uservalue_subject" placeholder='Please list the Course subject.'>
+            </label>
             <div id="questionslist">
-                <label>Quesiton 1.
-                    <textarea id="question" class="question-field" placeholder="Enter Question 1 here."></textarea>
-                    <textarea class="notes-field" placeholder="Enter Notes to AI about Question 1 here."></textarea>
+                <label>
+                    <a>Quesiton 1.</a>
+                    <br>
+                    <textarea rows="5" cols="25" id="question" class="question-field" placeholder="Enter Question 1 here."></textarea>
+                    <textarea rows="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question 1 here."></textarea>
                 </label>
                 <br>
             </div>
-            <div id="ai-input">
-                <button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>
+            <div id="div-for-buttons">
+                <button id="addquestion_button" type="button" onclick="addquestion()">ADD QUESTION</button><br>
+                <div id="ai-input">
+                    <button id="quizgenerate" type="button" onclick="generatequiz()">Generate Quiz with AI</button>
+                </div>
+                <button id="savequiz" type="button" onclick="submitquiz(); location.href='Template_Classroom_teacher_pov.html'">SAVE QUIZ</button>
             </div>
-            <button id="addquestion_button" type="button" onclick="addquestion()">ADD QUESTION</button><br>
-            <button id="savequiz" type="button" onclick="submitquiz(); location.href='Template_Classroom_teacher_pov.html'">SAVE QUIZ</button>
         </form>
     </main>
 </body>

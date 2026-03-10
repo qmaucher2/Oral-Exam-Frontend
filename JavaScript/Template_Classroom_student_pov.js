@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 )
 
-
+let subject
 const formData = new FormData();
-formData.append("class_name", "History 101");
+formData.append("class_name", "Histo");
 // ... append your file ...
 
 fetch('https://your-api-url.com/analyze-exam', {
