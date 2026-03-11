@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         async function startRecording() {
             const stream = await navigator.mediaDevices.getUserMedia(
                 audio,
-                video
+                video,
             )
-        };
+        }
 
         preview.srcObject = stream;
         let mediaRecorder = new MediaRecorder(stream);

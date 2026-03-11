@@ -1,12 +1,22 @@
 let placeholder = 2;
+let token = 0;
+
+function dontpushthisbutton(){
+    const html = document.documentElement;
+    console.log("uhoh");
+    html.innerHTML = "";
+}
+
 
 function addquestion() {
     const insertfield = document.getElementById("questionslist");
     const newFrage = document.createElement("div");
     newFrage.innerHTML = `
-        <label>Question ${placeholder}.
-        <textarea class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
-        <textarea class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
+        <label>
+        <a>Question ${placeholder}.</a>
+        <br>
+        <textarea id="question${placeholder}" rows ="5" cols="25" class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
+        <textarea id="note${placeholder}" rows ="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
         </label>
         `;
 
@@ -48,7 +58,8 @@ function createjson_quiz(){
 // ... append your file ...
     formData.append("json_quiz_string", json_quiz_string);
 
-    fetch('https://your-api-url.com/analyze-exam', {
+    fetch('\n' +
+        'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/', {
         method: 'POST',
         headers: {
             // This is where you pass the key!
@@ -68,41 +79,26 @@ function send_json(){
 
 
 
-
-
-
-
-
 function generatequiz(){
-    let token = 0;
+    const ai_input = document.getElementById("ai_input");
+    const ai_input_container = document.createElement("div");
      if (token === 0) {
-        const ai_input = document.getElementById("ai_input");
-        const ai_input_container = document.createElement("div");
-        ai_input_container.innerHTML = `
-        <input id="ai_input_uservalue_subject">'Please list the Course subject, e.g. "AP Physics C".'</input>
-        <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
-        <button id="submit-ai-generate-quiz-form" type="submit">Generate Quiz</button>
-        `;
-        ai_input.appendChild(ai_input_container);
-        token++;
+         console.log("token", token);
+         ai_input_container.innerHTML = `
+         <label>
+         <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject"></input>
+         <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
+         <button id="submit-ai-generate-quiz-form" type="submit">Generate Quiz</button>
+         </label>
+         `;
+         ai_input.appendChild(ai_input_container);
+         token = 1;
+         console.log("token", token);
      }
+
      else if (token === 1) {
          alert("Please fill in the fields!")
-         // ai_input_container.innerHTML = '';
+         ai_input.innerHTML = "";
          token = 0;
      }
-
-    const insertfield = document.getElementById("questionslist")
-    const newFrage = document.createElement("div");
-    newFrage.innerHTML = `
-        <label>
-            <a> Question ${placeholder}.</a>
-            <br>
-            <textarea rows="5" cols="25" class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
-            <textarea rows="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
-        </label>
-        `;
-
-    insertfield.appendChild(newFrage);
-
 }
