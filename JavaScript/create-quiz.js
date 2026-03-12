@@ -94,6 +94,7 @@ function generatequiz(){
          ai_input.appendChild(ai_input_container);
          token = 1;
          console.log("token", token);
+         call_generative_ai();
      }
 
      else if (token === 1) {
@@ -101,4 +102,19 @@ function generatequiz(){
          ai_input.innerHTML = "";
          token = 0;
      }
+}
+
+function call_generative_ai() {
+    let course_subject_input = document.getElementById("ai_input_uservalue_subject");
+    let quiz_topic_input = document.getElementById("ai_input_uservalue_topic");
+
+    const course_subject_input_array = Array.from(course_subject_input).map(x => x.value);
+    const quiz_topic_input_array = Array.from(quiz_topic_input).map(x => x.value);
+
+    let quiz_generation_prompt = {
+        course_subject: course_subject_input_array,
+        quiz_topic: quiz_topic_input_array,
+    }
+
+    let quiz_generation_prompt_json = JSON.stringify(quiz_generation_prompt);
 }
