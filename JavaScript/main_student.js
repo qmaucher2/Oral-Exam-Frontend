@@ -66,6 +66,21 @@ function stopRecording(){
     }
 }
  */
+
+
+
+function startScreenRecording(){
+    // const stream = await navigator.mediaDevices.getUserMedia();
+    const recorder = new MediaRecorder(stream);
+    recorder.start();
+
+    const [video] = stream.getVideoTracks();
+    video.addEventListener("ended", ()=>{})
+    recorder.start();
+}
+
+
+
 function stopRecording() {
     // Check state using the correct string value 'inactive' as per MDN docs
     if (mediaRecorder && mediaRecorder.state !== 'inactive') {
