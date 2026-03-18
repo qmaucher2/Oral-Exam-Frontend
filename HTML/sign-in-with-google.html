@@ -36,6 +36,15 @@
         console.log('Family Name: ' + responsePayload.family_name);
         console.log("Image URL: " + responsePayload.picture);
         console.log("Email: " + responsePayload.email);
+
+        fetch('/n' + 'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/', {
+            method: 'POST',
+            headers: {
+                "API_Key": process.env.API_KEY
+            },
+        })
+            .then(response => response.json())
+            .then(data => console.log(data));
     }
 
     // helps decode the user input

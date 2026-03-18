@@ -10,6 +10,7 @@ async function prime_startRecording(){
         buttonbox.textContent= " 🛑stop-button";
         await startAnticheat();
         startRecording().then();
+        await startScreenRecording();
     }
     else {
         buttonbox.textContent = "🎤start-button"
@@ -68,15 +69,28 @@ function stopRecording(){
  */
 
 
-
-function startScreenRecording(){
-    // const stream = await navigator.mediaDevices.getUserMedia();
-    const recorder = new MediaRecorder(stream);
-    recorder.start();
-
-    const [video] = stream.getVideoTracks();
-    video.addEventListener("ended", ()=>{})
-    recorder.start();
+let screencount = 0;
+async function startScreenRecording(){
+    const stream = await navigator.mediaDevices.getDisplayMedia({video: true, audio: true });
+    const recorder = new MediaRecorder(stream, {mimeType: 'video/webm'});
+    const chunks = [];
+    if (screencount === 0){
+        mediaRecorder.ondataavailable = (event) => chunks.push(event.data);
+        mediaRecorder.onstop = () => {
+            const blob = new Blob(chunks, {type: "video/webm"});
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'screen-recording.webm';
+            a.click();
+            URL.revokeObjectURL(url);
+        };
+        recorder.start();
+    }
+    else{
+        screencount = 0;
+        recorder.stop()
+    }
 }
 
 

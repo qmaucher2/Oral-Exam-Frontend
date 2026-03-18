@@ -86,7 +86,7 @@ function generatequiz(){
          console.log("token", token);
          ai_input_container.innerHTML = `
          <label>
-         <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject"></input>
+         <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject">
          <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
          <button id="submit-ai-generate-quiz-form" type="submit">Generate Quiz</button>
          </label>
