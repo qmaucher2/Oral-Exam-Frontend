@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>teacher-pov</title>
     <link rel="stylesheet" href="../CSS/Template_Classroom_teacher_pov.css">
+    <script src="../JavaScript/post-quiz.js"></script>
 </head>
 <body>
 <header>
@@ -32,12 +33,24 @@
 <section id="post-quiz-section">
     <fieldset>
         <h2>Post quiz to classroom</h2>
-        <div id="quizlist-container">
-            <ul>
-                <li><a href="Template-Quiz.txt">Template-Quiz</a></li>
+        <form>
+            <div id="quizlist-container">
+                <select id="quizlist">
+                    <option><a href="Template-Quiz.txt">Template-Quiz</a></option>
+                </select>
+            </div>
+            <button onclick="post_quiz()" id="post-quiz">POST QUIZ</button>
+        </form>
+    </fieldset>
+</section>
+<section id="students_in_classroom">
+    <fieldset>
+        <h3>Students in classroom</h3>
+        <div id="students-container">
+            <ul id="students-list">
+               <li></li>
             </ul>
         </div>
-        <button id="post-quiz">POST QUIZ</button>
     </fieldset>
 </section>
 <section id="list of students">

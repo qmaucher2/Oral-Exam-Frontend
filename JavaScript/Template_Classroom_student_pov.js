@@ -6,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
         async function startRecording() {
             const stream = await navigator.mediaDevices.getUserMedia(
                 audio,
-                video
+                video,
             )
-        };
+        }
 
         preview.srcObject = stream;
         let mediaRecorder = new MediaRecorder(stream);
@@ -40,9 +40,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 )
 
-
+let subject
 const formData = new FormData();
-formData.append("class_name", "History 101");
+formData.append("class_name", "Histo");
 // ... append your file ...
 
 fetch('https://your-api-url.com/analyze-exam', {

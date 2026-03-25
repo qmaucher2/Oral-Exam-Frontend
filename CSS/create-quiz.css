@@ -25,7 +25,41 @@ header {
     width: 30px;
 }
 
+
+/*nav*/
+
 /*main*/
 .quiz-container {
     margin: 2%;
 }
+
+#uservalue_subject {
+    display: flex;
+    width: 180px;
+}
+
+
+#div-for-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 1%;
+    border: thin solid red;
+}
+
+#ai_input_uservalue {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly !important;
+}
+
+#ai_input_uservalue_subject {
+    display: flex;
+    flex-direction: row;
+}
+
+#ai_input_uservalue_topic{
+    display: flex;
+    flex-direction: row;
+}
+
