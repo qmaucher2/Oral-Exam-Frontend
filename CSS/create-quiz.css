@@ -46,3 +46,20 @@ header {
     padding: 1%;
     border: thin solid red;
 }
+
+#ai_input_uservalue {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly !important;
+}
+
+#ai_input_uservalue_subject {
+    display: flex;
+    flex-direction: row;
+}
+
+#ai_input_uservalue_topic{
+    display: flex;
+    flex-direction: row;
+}
+

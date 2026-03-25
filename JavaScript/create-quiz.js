@@ -55,15 +55,15 @@ function createjson_quiz(){
     const subject = document.getElementById("uservalue_subject").value;
     const formData = new FormData();
     formData.append("class_name", subject);
-// ... append your file ...
+    // append the file:
     formData.append("json_quiz_string", json_quiz_string);
 
     fetch('\n' +
-        'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/', {
+        'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/supabase/create_assignment', {
         method: 'POST',
         headers: {
             // This is where you pass the key!
-            "API_KEY": "process.env.API_KEY"
+            "ORAL_EXAM_API_KEY": process.env.ORAL_EXAM_API_KEY
         },
         body: formData
     })
@@ -86,8 +86,11 @@ function generatequiz(){
          console.log("token", token);
          ai_input_container.innerHTML = `
          <label>
-         <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject">
-         <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
+         <div id="ai_input_uservalue">
+            <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject">
+            <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
+         </div>
+         <br>
          <button id="submit-ai-generate-quiz-form" type="submit">Generate Quiz</button>
          </label>
          `;
