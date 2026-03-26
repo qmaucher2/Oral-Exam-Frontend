@@ -6,7 +6,6 @@ html {
 header {
     display: flex;
     flex-direction: row;
-    border: thin solid red;
     justify-content: space-between;
 }
 
@@ -15,7 +14,6 @@ header {
     justify-content: flex-end;
     flex-direction: row;
     align-items: center;
-    border: thin solid red;
 }
 
 .signout-border {
@@ -36,6 +34,7 @@ header {
 #uservalue_subject {
     display: flex;
     width: 180px;
+    padding: 0.5%;
 }
 
 
@@ -44,9 +43,30 @@ header {
     flex-direction: column;
     margin: auto;
     padding: 1%;
-    border: thin solid red;
 }
 
+
+
+#addquestion {
+    display: flex;
+    flex-direction: column;
+}
+
+#quizgenerate{
+    margin-bottom: 1%;
+    padding: 0.25%;
+}
+
+
+#savequiz{
+    margin-bottom: 1%;
+    padding: 0.25%;
+    text-align: center;
+    width: auto;
+}
+
+
+/*js ai-quiz generate*/
 #ai_input_uservalue {
     display: flex;
     flex-direction: row;

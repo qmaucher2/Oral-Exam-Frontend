@@ -57,15 +57,23 @@ function createjson_quiz(){
     formData.append("class_name", subject);
     // append the file:
     formData.append("json_quiz_string", json_quiz_string);
+    formData.append("due_date", "01/01/2027")
+
+    const payload = {
+        class_name: subject,
+        json_quiz_string: json_quiz_string,
+        due_date: "01/01/2027",
+    }
 
     fetch('\n' +
         'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/supabase/create_assignment', {
         method: 'POST',
         headers: {
             // This is where you pass the key!
-            "ORAL_EXAM_API_KEY": process.env.ORAL_EXAM_API_KEY
+            "Content-Type": "application/json",
+            "API_KEY": "3570fd7fe03b163e9dc26f9b3f0c22496e1ae7ab2d12f2b6ec1072c57018835d"
         },
-        body: formData
+        body: JSON.stringify(payload)
     })
         .then(response => response.json())
         .then(data => console.log(data));

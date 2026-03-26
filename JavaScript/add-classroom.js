@@ -16,7 +16,7 @@ function addClassroom() {
     fetch('/n' + 'https:https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/supabase/create_classroom', {
         method:'POST',
         headers: {
-            "ORAL_EXAM_API_KEY": process.env.ORAL_EXAM_API_KEY
+            "ORAL_EXAM_API_KEY": "3570fd7fe03b163e9dc26f9b3f0c22496e1ae7ab2d12f2b6ec1072c57018835d"
         },
         body: formData
     })
