@@ -7,7 +7,6 @@ html{
 header {
     display: flex;
     flex-direction: row;
-    border: thin solid red;
     justify-content: space-between;
 }
 

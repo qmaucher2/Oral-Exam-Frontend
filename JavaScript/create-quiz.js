@@ -28,7 +28,7 @@ function addquestion() {
 function submitquiz(){
     createjson_quiz();
     send_json();
-    alert("asdf");
+    alert("The frontend received the request");
     console.log("Quiz-form submitted")
 }
 
@@ -39,6 +39,12 @@ function createjson_quiz(){
     // const question_array = [...questions].map(x => x.value);
     const question_array = Array.from(questions).map(x => x.value);
     const notes_array = Array.from(notes).map(x => x.value);
+    console.log("qeustion",question_array);
+    console.log("notes", notes_array);
+
+    const ordered_quiz = Object.fromEntries(
+        question_array.map((key, index) => [key, notes_array[index]])
+    );
 
     let json_quiz = {
         questions: question_array,
@@ -51,23 +57,49 @@ function createjson_quiz(){
     console.log(JSON.stringify(json_quiz));
     console.log(JSON.stringify(json_voice));
 
-    const json_quiz_string = JSON.stringify(json_quiz);
+
     const subject = document.getElementById("uservalue_subject").value;
-    const formData = new FormData();
-    formData.append("class_name", subject);
+    // const formData = new FormData();
+    // formData.append("class_name", subject);
     // append the file:
-    formData.append("json_quiz_string", json_quiz_string);
+    // formData.append("json_quiz_string", json_quiz_string);
+    // formData.append("due_date", "01/01/2027")
+
+
+    const payload = {
+        title: "name",
+        classroom_name: subject,
+        questions: ordered_quiz,
+        due_date: "01/01/2027",
+    }
 
     fetch('\n' +
         'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/supabase/create_assignment', {
         method: 'POST',
         headers: {
             // This is where you pass the key!
-            "ORAL_EXAM_API_KEY": process.env.ORAL_EXAM_API_KEY
+            "Content-Type": "application/json",
+            "API_KEY": "3570fd7fe03b163e9dc26f9b3f0c22496e1ae7ab2d12f2b6ec1072c57018835d"
         },
-        body: formData
+        body: JSON.stringify(payload)
     })
-        .then(response => response.json())
+        .then(async response => {
+            // 1. Check if the response is a 422 Unprocessable Entity
+            if (response.status === 422) {
+                const errorData = await response.json();
+                // 2. Log FastAPI's specific error details as a readable table
+                console.error("FastAPI Validation Error:");
+                console.table(errorData.detail);
+                throw new Error("Data validation failed (422)");
+            }
+
+            // 3. Handle other errors (401, 404, 500)
+            if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+
+            return response.json();
+        })
         .then(data => console.log(data));
 
 }
