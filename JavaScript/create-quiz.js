@@ -120,7 +120,7 @@ function generatequiz(){
          <label>
          <div id="ai_input_uservalue">
             <input placeholder='Please list the Course subject, e.g. "AP Physics C".' id="ai_input_uservalue_subject">
-            <textarea id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
+            <textarea rows=5, cols=25 id="ai_input_uservalue_topic" placeholder="Please describe the topic of your quiz to the AI"></textarea>
          </div>
          <br>
          <button id="submit-ai-generate-quiz-form" type="submit">Generate Quiz</button>
