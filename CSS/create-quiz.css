@@ -2,6 +2,7 @@ html {
    background: #FAF9F6;
 }
 
+
 /*header*/
 header {
     display: flex;
@@ -23,12 +24,23 @@ header {
     width: 30px;
 }
 
+#signout_icon {
+    display: flex;
+    width: 2em;
+}
+
+#signout_text{
+    text-decoration: none;
+}
+#signout_text:hover {
+    visibility: visible;
+}
 
 /*nav*/
 
 /*main*/
 #quiz-container {
-    margin: 100px auto;
+    margin: 10px auto;
 }
 
 
@@ -44,6 +56,9 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 2%;
+    margin-bottom: 2%;
+    padding: 1%;
 }
 
 .questionslist{
@@ -71,20 +86,20 @@ header {
 
 
 #addquestion_button {
-    margin: 0.5%;
+    margin-bottom: 0.5%;
     width: 35em;
     text-align: center;
 }
 
 #quizgenerate{
-    margin: 0.5%;
+    margin-bottom: 0.5%;
     width: 35em;
     text-align: center;
 }
 
 
 #savequiz{
-    margin: 0.5%;
+    margin-bottom: 0.5%;
     width: 35em;
     text-align: center;
 }
@@ -107,3 +122,6 @@ header {
     flex-direction: row;
 }
 
+#submit-ai-generate-quiz-form{
+    margin-bottom: 2.5%;
+}
