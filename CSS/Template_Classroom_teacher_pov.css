@@ -25,29 +25,15 @@ header {
     width: 30px;
 }
 
-html {
-    background: #FAF9F6;
-}
-
-/*header*/
-header {
+#signout_icon {
     display: flex;
-    flex-direction: row;
-    border: thin solid red;
-    justify-content: space-between;
+    width: 2em;
 }
 
-#signout{
-    display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
-    align-items: center;
-    border: thin solid red;
+#signout_text{
+    text-decoration: none;
+}
+#signout_text:hover {
+    visibility: visible;
 }
 
-.signout-border {
-    border: 1px solid black;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-}

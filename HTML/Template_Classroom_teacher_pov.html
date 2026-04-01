@@ -13,9 +13,9 @@
     <div id="signout">
         <div id="signout-button">
             <fieldset class="signout-border">
-                <!--<img src="icon.png" alt="icon">-->
+                <img id="signout_icon" src="user_icon.svg" alt="icon">
             </fieldset>
-            <a href="sign-in.html">Sign-Out</a>
+            <a id="signout_text" href="sign-in.html">Sign-Out</a>
         </div>
     </div>
 </header>
@@ -47,14 +47,20 @@
     <fieldset>
         <h3>Students in classroom</h3>
         <div id="students-container">
-            <ul id="students-list">
-               <li></li>
+            <ul id="students_list">
+
             </ul>
+            <label>
+                <input id="add_student_input" type="text" placeholder="Add Student">
+            </label>
+            <br>
+            <button id="add-student" onclick="add_student()">ADD STUDENT</button>
         </div>
     </fieldset>
 </section>
 <section id="list of students">
     <ul>
+        <li></li>
     </ul>
 </section>
 </body>
