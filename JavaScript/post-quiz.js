@@ -4,8 +4,8 @@ function post_quiz() {
 }
 
 let student_num = 0
-let student_name = document.getElementById('add_student_input').value;
 function add_student(){
+    let student_name = document.getElementById('add_student_input').value;
     const students_list = document.getElementById("students_list");
     const students_bulletpoint = document.createElement("students_bulletpoint");
     students_bulletpoint.innerHTML = `
@@ -14,6 +14,10 @@ function add_student(){
     </li>
     `
     students_list.appendChild(students_bulletpoint);
+    console.log("Student_name", student_name);
+    student_num++;
+
+
 }
 
 function generatequiz(){
