@@ -38,15 +38,17 @@
         console.log("Image URL: " + responsePayload.picture);
         console.log("Email: " + responsePayload.email);
 
-        fetch('/n' + 'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/', {
+        fetch('/n' + 'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/login', {
             method: 'POST',
             headers: {
-                "API_Key": process.env.API_KEY
+                "oauth_token": response.credential.access_token,
             },
         })
             .then(response => response.json())
             .then(data => console.log(data));
+        //     if student(){window.location.replace("main_student.html") } else{window.location.replace("main_teacher.html")}
     }
+
 
     // helps decode the user input
     function decodeJwtResponse(token) {
@@ -59,6 +61,8 @@
         return JSON.parse(jsonPayload);
     }
 
+    // "API_KEY" = cookieStore.get("API_KEY");
+    //  "session_token" = cookieStore.get("session_token");
 
     /*
     if email ends in cpsd:
