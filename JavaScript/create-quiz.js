@@ -1,13 +1,6 @@
 let placeholder = 2;
 let token = 0;
 
-function dontpushthisbutton(){
-    const html = document.documentElement;
-    console.log("uhoh");
-    html.innerHTML = "";
-}
-
-
 function addquestion() {
     const insertfield = document.getElementById("questionslist");
     const newFrage = document.createElement("div");

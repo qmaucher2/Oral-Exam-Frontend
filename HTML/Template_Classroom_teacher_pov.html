@@ -45,9 +45,9 @@
 </section>
 <section id="students_in_classroom">
     <fieldset>
-        <h3>Num of Students in Classroom</h3>
+        <h4>Num of Students in Classroom</h4>
         <div id="student_num_container">
-            <p id="student_num">0</p>
+            <p id="student_num_tag">0</p>
         </div>
         <h3>Students in classroom</h3>
         <div id="students-container">
@@ -55,10 +55,12 @@
 
             </ul>
             <label>
-                <input id="add_student_input" type="text" placeholder="Add Student">
+                <input id="add_student_input" type="text" placeholder="Add Student Email">
             </label>
             <br>
             <button id="add-student" onclick="add_student()">ADD STUDENT</button>
+            <br>
+            <button id="remove-student" onclick="remove_student()">REMOVE STUDENT</button>
         </div>
     </fieldset>
 </section>
