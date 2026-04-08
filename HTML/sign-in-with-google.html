@@ -38,15 +38,20 @@
         console.log("Image URL: " + responsePayload.picture);
         console.log("Email: " + responsePayload.email);
 
-        fetch('/n' + 'https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/login', {
+        fetch('https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/login', {
             method: 'POST',
             headers: {
-                "oauth_token": response.credential.access_token,
+                "oauth_token": response.credential,
             },
         })
             .then(response => response.json())
             .then(data => console.log(data));
-        //     if student(){window.location.replace("main_student.html") } else{window.location.replace("main_teacher.html")}
+        //     if responsePayload.email[0]{
+        //          window.location.replace("main_student.html")
+        //     }
+        //     else {
+        //          window.location.replace("main_teacher.html")
+        //     }
     }
 
 
