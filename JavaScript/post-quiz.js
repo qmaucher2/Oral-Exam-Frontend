@@ -16,7 +16,8 @@ function add_student(){
         else{
             students_bulletpoint.innerHTML = `
             <li id="${student_name}">
-            ${student_name}
+            <a>${student_name}</a>
+                <button id="remove-student" onclick="remove_student()"><img id="x-icon" src="x-icon.svg"  alt="icon"></button>
             </li>
             `
             students_list.appendChild(students_bulletpoint);
