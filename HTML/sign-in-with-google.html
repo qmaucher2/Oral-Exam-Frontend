@@ -41,17 +41,19 @@
         fetch('https://oral-exam-backend-307630687354.northamerica-northeast1.run.app/login', {
             method: 'POST',
             headers: {
-                "oauth_token": response.credential,
+                'Content-Type': 'application/json',
             },
+            credentials: 'include',
+            body: JSON.stringify({
+                "oauth_token": response.credential
+            })
+        }).then(() => {
+            if (["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"].includes(responsePayload.email[0])) {
+                window.location.href = '/Oral-Exam-Frontend/HTML/main_student.html'
+            } else {
+                window.location.href = '/Oral-Exam-Frontend/HTML/main_teacher.html'
+            }
         })
-            .then(response => response.json())
-            .then(data => console.log(data));
-        //     if responsePayload.email[0]{
-        //          window.location.replace("main_student.html")
-        //     }
-        //     else {
-        //          window.location.replace("main_teacher.html")
-        //     }
     }
 
 
