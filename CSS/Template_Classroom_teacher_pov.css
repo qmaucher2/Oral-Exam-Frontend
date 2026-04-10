@@ -40,9 +40,23 @@ header {
 /*main*/
 
 /*students_in_classroom section*/
-#x-icon{
-    width: 2em;
-    height: 2em;
+
+.student_in_classroom {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: thin solid red;
+}
+
+#remove-student{
+    background: #FAF9F6;
+    border: none;
+}
+.x-icon{
+    width: 1.5em;
+    height: 1.5em;
+    backface-visibility: hidden;
 }
 
 

@@ -7,17 +7,18 @@ let list_of_students = [];
 function add_student(){
     let student_name = document.getElementById('add_student_input').value;
     const students_list = document.getElementById("students_list");
-    const students_bulletpoint = document.createElement("students_bulletpoint");
+    const students_bulletpoint = document.createElement("div");
     const student_num_tag =document.getElementById("student_num_tag");
     if (student_name.includes("@")){
         if (list_of_students.includes(student_name)){
             alert("Student Name is already in the list");
         }
         else{
+            let student_name_id = student_name.replaceAll("@", "")
             students_bulletpoint.innerHTML = `
-            <li id="${student_name}">
+            <li class="student_in_classoom">
             <a>${student_name}</a>
-                <button id="remove-student" onclick="remove_student()"><img id="x-icon" src="x-icon.svg"  alt="icon"></button>
+                <button id="remove-student" onclick="remove_student()"><img class="x-icon" src="x-icon.svg"  alt="icon"></button>
             </li>
             `
             students_list.appendChild(students_bulletpoint);
@@ -34,6 +35,7 @@ function add_student(){
 }
 
 function remove_student(){
+    alert("Buttonclick")
     let student_name = document.getElementById('add_student_input').value;
     const students_bulletpoint = document.createElement("students_bulletpoint");
     students_bulletpoint.removeChild(student_name);
