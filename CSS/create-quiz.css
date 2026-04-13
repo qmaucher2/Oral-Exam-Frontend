@@ -76,6 +76,21 @@ header {
     width: 15em;
 }
 
+.remove_question{
+    background: #FAF9F6;
+    border: none;
+}
+
+.rem_in_circ{
+    width: 2.5em;
+    height: 2.5em;
+    opacity: 75%;
+}
+
+.rem_in_circ:hover{
+    opacity: 1;
+}
+
 #div-for-buttons {
     display: flex;
     flex-direction: column;
