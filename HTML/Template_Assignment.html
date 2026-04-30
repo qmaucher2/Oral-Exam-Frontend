@@ -8,32 +8,34 @@
 </head>
 <body>
 <header>
-    <h1>Template_Assignment_student_pov</h1>
+    <h1>Template Assignment</h1>
     <div id="signout">
         <div id="signout-button">
-            <fieldset class="signout-border">
+            <div class="signout-border">
                 <img id="signout_icon" src="user_icon.svg" alt="icon">
-            </fieldset>
+            </div>
             <a id="signout_text" href="sign-in.html">Sign-Out</a>
         </div>
     </div>
 </header>
 <main>
-    <section id="template_assignment_description">
-        <div>
-            <p></p>
-        </div>
-    </section>
-    <section id="start-quiz">
-        <button onclick="prime_startRecording()" id="start_button">🎤start-quiz</button>
-        <!--<button onclick="downloadRecording()" id="stop-button">end quiz</button>-->
-    </section>
-    <section>
-        <form>
-            <input type="file" id="file" accept="text/*"><br>
-            <button id="AssignmentUpload">Submit your assingment</button>
-        </form>
-    </section>
+    <div id="div-for-buttons">
+        <section id="template_assignment_description">
+            <div>
+                <p></p>
+            </div>
+        </section>
+        <section id="start-quiz">
+            <button onclick="prime_startRecording()" id="start_button">🎤Start-quiz</button>
+            <!--<button onclick="downloadRecording()" id="stop-button">end quiz</button>-->
+        </section>
+        <section>
+            <form>
+                <input type="file" id="file" accept="text/*"><br>
+                <button id="AssignmentUpload">Submit your assingment</button>
+            </form>
+        </section>
+    </div>
 </main>
 </body>
 </html>

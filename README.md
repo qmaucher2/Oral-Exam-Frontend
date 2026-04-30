@@ -42,3 +42,33 @@
         </tr>
     </table>
 </fieldset>
+<h2>Teacher Walk Through</h2>
+<p>Sign in to Main Teacher</p>
+<br>
+<img src="Main-teacher">
+<p>Click on Example desired Classroom Link which redirects you to the given page.
+<br>
+Alternatiely press on Add Classroom to add a classroom
+</p>
+<br>
+<img src="Template-Classroom Teacher.png">
+<p>Here you have multiple options:</p>
+<ul>
+    <li>Create a new quiz</li>
+    <li>Look at your quizzes</li>
+    <li>Choose a quiz to post to the classroom</li>
+    <li>Add a student to your classroom</li>
+</ul>
+<br> 
+<p>If you add decide to create a new quiz, you will be redirected to this page:</p>
+<br>
+<img src="Create-Quiz">
+<br>
+<p>Again, here you have multiple options:</p>
+<ul>
+    <li>Add a question</li>
+    <li>Remove a question</li>
+    <li> Generate a quiz with AI (not available yet)</li>
+    <li>Save your quiz</li>
+</ul>
+

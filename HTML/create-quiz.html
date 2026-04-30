@@ -12,10 +12,10 @@
         <h1>Create Quiz</h1>
         <div id="signout">
             <div id="signout-button">
-                <fieldset class="signout-border">
+                <div class="signout-border">
                     <img id="signout_icon" src="user_icon.svg" alt="icon">
-                </fieldset>
-                <a id="signout_text" href="sign-in.html">Sign-Out</a>
+                </div>
+                <a id="signout_text" href="sign-in-with-google.html">Sign-Out</a>
             </div>
         </div>
     </header>
@@ -26,17 +26,18 @@
         <form id="Quiz-Creation-Form">
             <label>
                 <input id="uservalue_subject" placeholder='Please list the Course subject.'>
-                <textarea id="quiz_description" placeholder="Enter an optional description of the quiz and its expectations for the students">
-                </textarea>
+                <textarea placeholder="Enter an optional description of the quiz and its expectations for the students" rows="5" cols="25" id="quiz_description"></textarea>
             </label>
             <fieldset id="question_container">
                 <div id="questionslist">
                     <label>
                         <a>Question 1.</a>
-                        <br>
-                        <textarea rows="5" cols="25" id="question1" class="question-field" placeholder="Enter Question 1 here."></textarea>
-                        <textarea rows="5" cols="25" id="note1" class="notes-field" placeholder="Enter Notes to AI about Question 1 here."></textarea>
-                        <button class="remove_question"><img class="rem_in_circ" src="rem_in_circle.svg" alt='icon'></button>
+                        <div class="remove_question_box">
+                            <br>
+                            <textarea rows="5" cols="25" id="question1" class="question-field" placeholder="Enter Question 1 here."></textarea>
+                            <textarea rows="5" cols="25" id="note1" class="notes-field" placeholder="Enter Notes to AI about Question 1 here."></textarea>
+                            <button class="remove_question"><img class="rem_in_circ" src="rem_in_circle.svg" alt='icon'></button>
+                        </div>
                     </label>
                     <br>
                 </div>
