@@ -2,36 +2,72 @@ html {
     background: #FAF9F6;
 }
 
-/*header*/
 
+/*header*/
 header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
 
-#signout{
+#signout-button{
     display: flex;
-    justify-content: flex-end;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
 }
 
 .signout-border {
     border: 1px solid black;
     border-radius: 50%;
-    height: 30px;
-    width: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 45px;
+    width: 45px;
 }
 
 #signout_icon {
     display: flex;
     width: 2em;
+    height: 2em;
 }
 
 #signout_text{
     text-decoration: none;
+    opacity: 0;
 }
 #signout_text:hover {
     visibility: visible;
+    opacity: 1;
+}
+
+
+#div-for-buttons {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    padding: 0.5%;
+}
+
+#start_button{
+    margin-bottom: 0.5%;
+    width: 12em;
+    height: 2em;
+    text-align: center;
+}
+
+#file{
+    margin-bottom: 0.5%;
+    width: 15em;
+    height: 2em;
+    text-align: center;
+}
+
+#Assignments{
+    margin-bottom: 0.5%;
+    width: 15em;
+    height: 5em;
+    text-align: center;
 }

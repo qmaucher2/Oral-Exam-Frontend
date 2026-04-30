@@ -7,10 +7,12 @@ function addquestion() {
     newFrage.innerHTML = `
         <label>
         <a>Question ${placeholder}.</a>
-        <br>
-        <textarea id="question${placeholder}" rows ="5" cols="25" class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
-        <textarea id="note${placeholder}" rows ="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
-        <button><img class="rem_in_circ" src="rem_in_circle.svg" alt='icon'></button>
+        <div class="remove_question_box">
+            <br>
+            <textarea id="question${placeholder}" rows ="5" cols="25" class="question-field" placeholder="Enter Question ${placeholder} here."></textarea>
+            <textarea id="note${placeholder}" rows ="5" cols="25" class="notes-field" placeholder="Enter Notes to AI about Question ${placeholder} here."></textarea>
+            <button class="remove_question"><img class="rem_in_circ" src="rem_in_circle.svg" alt='icon'></button>
+        </div>
         </label>
         `;
 

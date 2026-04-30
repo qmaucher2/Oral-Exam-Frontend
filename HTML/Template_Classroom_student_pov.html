@@ -10,33 +10,35 @@
 </head>
 <body>
 <header>
-    <h1>Template_Classroom_student_pov</h1>
+    <h1>Template Classroom</h1>
     <div id="signout">
         <div id="signout-button">
-            <fieldset class="signout-border">
+            <div class="signout-border">
                 <img id="signout_icon" src="user_icon.svg" alt="icon">
-            </fieldset>
+            </div>
             <a id="signout_text" href="sign-in.html">Sign-Out</a>
         </div>
     </div>
 </header>
 <main>
-    <section id="your_assignments">
-        <h2>Your Assignments</h2>
-        <ul>
-            <li><a href="Template_Assignment.html">Template Assignment</a></li>
-        </ul>
-    </section>
-    <section id="start-quiz">
+    <fieldset>
+        <section id="your_assignments">
+            <h2>Your Assignments</h2>
+            <ul>
+                <li><a href="Template_Assignment.html">Template Assignment</a></li>
+            </ul>
+        </section>
+    </fieldset>
+<!--    <section id="start-quiz">
         <button onclick="prime_startRecording()" id="start_button">🎤start-quiz</button>
-        <!--<button onclick="downloadRecording()" id="stop-button">end quiz</button>-->
+        <button onclick="downloadRecording()" id="stop-button">end quiz</button> #comment this line
     </section>
     <section>
         <form>
             <input type="file" id="file" accept="text/*"><br>
             <button id="AssignmentUpload">Submit your assingment</button>
         </form>
-    </section>
+    </section>-->
 </main>
 </body>
 </html>
