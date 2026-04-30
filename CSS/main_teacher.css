@@ -1,17 +1,7 @@
-html {
-    background: #FAF9F6;
-}
-
-
-/*header*/
-header {
+/*header */
+#signout{
     display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-
-#signout-button{
-    display: flex;
+    justify-content: flex-end;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -63,11 +53,8 @@ header {
     opacity: 1;
 }
 
-/*#Template_Classroom {
+#Template_Classroom {
     margin-bottom: 1.5%;
 }
-*/
 
-.classroom-bullet-point{
-    margin: 0.25%;
-}
+/* */
