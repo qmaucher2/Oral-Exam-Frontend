@@ -44,13 +44,13 @@
 </fieldset>
 <h2>Teacher Walk Through</h2>
 <p>Sign in to Main Teacher</p>
-<img src="../Images/Main-teacher.png">
+<img src="Images/Main-teacher.png">
 <p>Click on Example desired Classroom Link which redirects you to the given page.
 <br>
 Alternatiely click on "Add Classroom" to add a classroom
 </p>
 <br>
-<img src="../Images/Template-Classroom Teacher.png">
+<img src="Images/Template-Classroom Teacher.png">
 <p>Here you have multiple options:</p>
 <ul>
     <li>Create a new quiz</li>
@@ -61,7 +61,7 @@ Alternatiely click on "Add Classroom" to add a classroom
 <br> 
 <p>If you add decide to create a new quiz, you will be redirected to this page:</p>
 <br>
-<img src="../Images/Create-Quiz.png">
+<img src="Images/Create-Quiz.png">
 <br>
 <p>Again, here you have multiple options:</p>
 <ul>
@@ -73,10 +73,30 @@ Alternatiely click on "Add Classroom" to add a classroom
 
 <h2>Student Walk Through</h2>
 <p>Sign in to Main Student</p>
-<img src="../Images/Main-student.png">
+<img src="Images/Main-student.png">
 <p>Click on the classroom you want to go to
 <br>
 --> This will redirect you to the desired page
 </p>
-<img src="../Images/Template-Classroom Student.png">
-<p>Here you can</p>
+<img src="Images/Template-Classroom Student.png">
+<p>Here you can view your uncompleted assignements
+<br>
+To access the assignments, simply click on the link
+<br>
+A possible template assignment could look like this:
+</p>
+<img src="Images/Template_Assignment.png">
+<p>Here you have multiple options:</p>
+<ul>
+    <li>Start the quiz</li>
+    <li>Upload a complementary file</li>
+    <li>Submit your assignment</li>
+</ul>
+<p>If you decide to press the "Start-quiz" option, two popups will appear:</p>
+<img src="Images/Template%20Assignment2.png">
+<img src="Images/Template%20Assignment3.png">
+<p>For your oral exam to be successfully recorded, accept the microphone and screen-sharing permissions
+<br>
+After having completed the exam, press the stop-button and click on "Submit your assignment."
+</p>
+
